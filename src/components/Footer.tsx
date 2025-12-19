@@ -35,7 +35,7 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3 text-slate-300">
                 <Phone className="h-5 w-5 mt-0.5 text-secondary shrink-0" />
-                <span>+123 456 7890</span>
+                <span>+235 69 03 04 05</span>
               </li>
               <li className="flex items-start space-x-3 text-slate-300">
                 <MessageCircle className="h-5 w-5 mt-0.5 text-secondary shrink-0" />

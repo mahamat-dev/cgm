@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button';
-import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   const whatsappMessage = encodeURIComponent("Hello ChadGlobal Market, I'm interested in your general goods. Please share more details and pricing.");
-  const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/23569030405?text=${whatsappMessage}`;
 
   return (
     <div className="flex flex-col">
@@ -61,8 +61,8 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold font-heading mb-1">Call Us</h3>
                   <p className="text-slate-600 mb-1">Mon-Sat from 8am to 6pm.</p>
-                  <a href="tel:+1234567890" className="text-secondary font-medium hover:underline">
-                    +123 456 7890
+                  <a href="tel:+23569030405" className="text-secondary font-medium hover:underline">
+                    +235 69 03 04 05
                   </a>
                 </div>
               </div>
