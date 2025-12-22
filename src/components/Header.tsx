@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from './ui/Button';
 import { Input } from './ui/Input';
 
 export function Header() {
@@ -43,19 +42,17 @@ export function Header() {
 
           {/* Desktop Navigation & Actions */}
           <div className="hidden md:flex items-center space-x-2">
-            <nav className="flex items-center mr-4 space-x-1">
+            <nav className="flex items-center mr-4 space-x-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary",
+                    isActive(item.href) ? "text-primary font-bold" : "text-muted-foreground"
+                  )}
                 >
-                  <Button
-                    variant={isActive(item.href) ? "secondary" : "ghost"}
-                    size="sm"
-                    className={cn(isActive(item.href) && "bg-secondary/10 text-secondary hover:bg-secondary/20")}
-                  >
-                    {item.name}
-                  </Button>
+                  {item.name}
                 </Link>
               ))}
             </nav>

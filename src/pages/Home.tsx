@@ -6,29 +6,44 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#f0fdf4] py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#f0fdf4] py-16 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578916171728-56685ff8d4cd?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-5"></div>
         <div className="container-custom relative">
-          <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
-              Your Reliable Source for <span className="text-primary">Quality Export Goods</span>
-            </h1>
-            <p className="mb-8 text-xl text-muted-foreground sm:max-w-xl">
-              We supply premium agricultural products, livestock, and raw materials from Chad to the world.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/products">
-                <Button size="lg" className="gap-2 h-12 px-8 text-base">
-                  Browse Our Products
-                  <ShoppingBag className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="gap-2 h-12 px-8 text-base">
-                  Contact Us Today
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </Link>
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="mb-6 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
+                Your Reliable Source for <span className="text-primary">Quality Export Goods</span>
+              </h1>
+              <p className="mb-8 text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+                We supply premium agricultural products, livestock, and raw materials from Chad to the world, ensuring quality and consistency.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link to="/products">
+                  <Button size="lg" className="gap-2 h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                    Browse Our Products
+                    <ShoppingBag className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg rounded-full border-2 hover:bg-white">
+                    Contact Us Today
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex-1 w-full max-w-xl lg:max-w-none">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50">
+                <img
+                  src="https://images.unsplash.com/photo-1625246333195-551e51245128?q=80&w=2000&auto=format&fit=crop"
+                  alt="Agricultural Export"
+                  className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
+                  <div className="text-white font-bold text-lg">Premium Quality</div>
+                  <div className="text-white/80 text-sm">Direct from the source</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

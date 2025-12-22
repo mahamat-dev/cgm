@@ -1,14 +1,26 @@
 import { Button } from '@/components/ui/Button';
 import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/Input';
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    const productName = searchParams.get('product');
+    if (productName) {
+      setFormData(prev => ({
+        ...prev,
+        message: `I am interested in getting a quote for ${productName}. Please provide more details regarding pricing and availability.`
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -186,7 +186,7 @@ export default function Products() {
                   </CardContent>
 
                   <CardFooter className="p-4 pt-0">
-                    <Link to="/contact" className="w-full">
+                    <Link to={`/contact?product=${encodeURIComponent(product.name)}`} className="w-full">
                       <Button className="w-full rounded-xl gap-2 group-hover:bg-primary group-hover:text-white transition-colors">
                         <MessageCircle className="h-4 w-4" />
                         Request Quote
