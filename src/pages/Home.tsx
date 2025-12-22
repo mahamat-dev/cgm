@@ -73,7 +73,7 @@ export default function Home() {
       <section className="py-24 bg-secondary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
         <div className="container-custom relative text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Ready to Order?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Ready to Partner?</h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
             Contact us today for pricing and availability. We are ready to assist you with your general goods needs.
           </p>

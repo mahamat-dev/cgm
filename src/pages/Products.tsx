@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import categoriesData from '@/data/categories.json';
 import productsData from '@/data/products.json';
 import { Button } from '@/components/ui/Button';
@@ -7,9 +8,9 @@ import { Checkbox } from '@/components/ui/Checkbox';
 import { Badge } from '@/components/ui/Badge';
 import { Input } from '@/components/ui/Input';
 import {
-  Package,
-  ShoppingCart,
-  Heart,
+  Package, 
+  MessageCircle,
+  Heart, 
   ChevronDown,
   Search
 } from 'lucide-react';
@@ -79,52 +80,18 @@ export default function Products() {
               {categoriesData.map((category) => (
                 <div key={category.id} className="flex items-center space-x-3">
                   <Checkbox
-                    id={category.id}
+                    id={category.id} 
                     checked={selectedCategories.includes(category.id)}
                     onChange={() => toggleCategory(category.id)}
                   />
                   <label
-                    htmlFor={category.id}
+                    htmlFor={category.id} 
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
                   >
                     {category.name}
                   </label>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Price Range (Visual Only) */}
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-bold text-lg">Price</h3>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Input type="number" placeholder="Min" className="h-9" />
-                <span className="text-muted-foreground">-</span>
-                <Input type="number" placeholder="Max" className="h-9" />
-              </div>
-              <Button className="w-full bg-secondary/10 text-secondary hover:bg-secondary/20" variant="ghost">Apply</Button>
-            </div>
-          </div>
-
-          {/* Dummy Filters for Visual Completeness */}
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-bold text-lg">Availability</h3>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <input type="radio" name="availability" id="all" className="accent-primary" defaultChecked />
-                <label htmlFor="all" className="text-sm">All</label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="radio" name="availability" id="instock" className="accent-primary" />
-                <label htmlFor="instock" className="text-sm">In Stock</label>
-              </div>
             </div>
           </div>
 
@@ -219,10 +186,12 @@ export default function Products() {
                   </CardContent>
 
                   <CardFooter className="p-4 pt-0">
-                    <Button className="w-full rounded-xl gap-2 group-hover:bg-primary group-hover:text-white transition-colors">
-                      <ShoppingCart className="h-4 w-4" />
-                      Add to Cart
-                    </Button>
+                    <Link to="/contact" className="w-full">
+                      <Button className="w-full rounded-xl gap-2 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <MessageCircle className="h-4 w-4" />
+                        Request Quote
+                      </Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}

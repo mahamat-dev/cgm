@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Search, User, ShoppingCart, Grid } from 'lucide-react';
+import { Menu, X, ShoppingBag, Search, User, Grid } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
 import { Input } from './ui/Input';
@@ -67,10 +67,6 @@ export function Header() {
             </Button>
             <Button variant="ghost" size="icon" className="rounded-full">
               <User className="h-5 w-5" />
-            </Button>
-            <Button variant="default" size="icon" className="rounded-full relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
             </Button>
           </div>
 
