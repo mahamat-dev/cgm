@@ -12,9 +12,9 @@ export function Logo({ className, variant = "default", theme = "light" }: LogoPr
   const subTextColor = isDark ? "text-slate-400" : "text-slate-500";
   
   // Brand Colors
-  const primaryColor = "#16a34a"; // Green 600 (Agriculture)
-  const secondaryColor = "#0284c7"; // Sky 600 (Global/Trade)
-  const accentColor = "#facc15"; // Yellow 400 (Sun/Energy/Harvest)
+  const primaryColor = "var(--color-primary)"; // Navy Blue (Trust/Global)
+  const secondaryColor = "var(--color-secondary)"; // Lighter Blue (Trade/Connection)
+  const accentColor = "var(--color-accent)"; // Gold (Value/Harvest)
 
   return (
     <div className={cn(
