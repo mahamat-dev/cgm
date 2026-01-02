@@ -108,27 +108,49 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold font-heading mb-4">Our Services</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive trade solutions connecting Chad to the world.
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900">Comprehensive Trade Solutions</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              We provide end-to-end services to ensure your trade operations are seamless, compliant, and efficient.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { icon: Truck, title: "Agro-commodity Export", desc: "Sourcing and exporting premium Chadian agricultural products." },
-              { icon: ShoppingBag, title: "Import & Supply", desc: "Wholesale supply of essential goods, solar systems, and electronics." },
-              { icon: FileText, title: "Documentation Support", desc: "Full assistance with export/import paperwork and compliance." },
-              { icon: Handshake, title: "Buyer Matchmaking", desc: "Connecting international buyers with trusted local suppliers." }
+              {
+                icon: Truck,
+                title: "Agro Export",
+                desc: "Direct sourcing and export of premium Chadian agricultural commodities.",
+                color: "bg-emerald-50 text-emerald-600 border-emerald-100"
+              },
+              {
+                icon: ShoppingBag,
+                title: "Import & Supply",
+                desc: "Wholesale supply of essential electronics, solar systems, and general goods.",
+                color: "bg-blue-50 text-blue-600 border-blue-100"
+              },
+              {
+                icon: FileText,
+                title: "Documentation",
+                desc: "Full support with customs, export/import paperwork, and compliance.",
+                color: "bg-purple-50 text-purple-600 border-purple-100"
+              },
+              {
+                icon: Handshake,
+                title: "B2B Matchmaking",
+                desc: "Connecting international buyers with trusted local suppliers in Chad.",
+                color: "bg-amber-50 text-amber-600 border-amber-100"
+              }
             ].map((service, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all duration-300 text-center group">
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition-transform">
-                  <service.icon className="h-7 w-7" />
+              <div key={index} className="group relative p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${service.color} border mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-bold font-heading mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.desc}</p>
+                <h3 className="text-xl font-bold font-heading mb-3 text-slate-900">{service.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -136,79 +158,108 @@ export default function Home() {
       </section>
 
       {/* Our Products Highlights */}
-      <section className="py-20 bg-slate-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold font-heading mb-4">Our Products</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              From premium agricultural exports to essential modern goods.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              "Sesame Seeds (White & Brown)",
-              "Gum Arabic",
-              "Groundnuts (Peanuts)",
-              "Dried Hibiscus (Karkadé)",
-              "Solar Lamps & Systems",
-              "Mobile Phones & Accessories"
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
-                  <CheckCircle className="h-5 w-5" />
-                </div>
-                 <span className="font-medium text-lg">{item}</span>
-               </div>
-             ))}
-          </div>
-          <div className="text-center mt-12">
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Background blobs */}
+        <div className="absolute top-1/4 left-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-40 -translate-x-1/2" />
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-amber-100 rounded-full blur-3xl opacity-40 translate-x-1/2" />
+
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">Featured Products</h2>
+              <p className="text-lg text-slate-600">
+                Discover our range of premium exports and essential imports, carefully selected for quality and value.
+              </p>
+            </div>
             <Link to="/products">
-              <Button variant="outline" size="lg" className="rounded-full px-8">
-                View All Products
+              <Button variant="outline" className="gap-2 rounded-full border-slate-300 hover:bg-white hover:text-primary transition-all">
+                View All Products <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { name: "Sesame Seeds", image: "/white_sesame_seed.jpeg", tag: "Export" },
+              { name: "Gum Arabic", image: "/gome_arabic_1.jpeg", tag: "Export" },
+              { name: "Groundnuts", image: "/groundnuts.jpg", tag: "Export" },
+              { name: "Dried Hibiscus", image: "/hibiscus_1.jpeg", tag: "Export" },
+              { name: "Solar Systems", image: "/solar_kit_1.jpeg", tag: "Import" },
+              { name: "Mobile & Tech", image: "/mobile-phones-accessories.jpg", tag: "Import" }
+            ].map((product, i) => (
+              <Link key={i} to="/products" className="group block relative rounded-[2rem] overflow-hidden bg-white shadow-sm hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-500 hover:-translate-y-1">
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-500 z-10" />
+                  <OptimizedImage
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-bold uppercase tracking-wider text-slate-800 shadow-sm">
+                      {product.tag}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold font-heading text-slate-900 group-hover:text-primary transition-colors flex items-center justify-between">
+                    {product.name}
+                    <div className="h-8 w-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </h3>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white relative">
         <div className="container-custom">
-          <div className="bg-primary rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="relative rounded-[3rem] overflow-hidden bg-slate-900 px-6 py-16 sm:px-12 sm:py-24 text-center lg:text-left">
+            {/* Background Gradients */}
+            <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-blue-600 rounded-full blur-[100px] opacity-50" />
+            <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-96 h-96 bg-indigo-600 rounded-full blur-[100px] opacity-50" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
-              <div className="flex-1">
-                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Why Choose Us?</h2>
-                <p className="text-primary-foreground/90 text-lg mb-8 max-w-xl">
-                  We build long-term partnerships based on trust, quality, and reliability.
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 leading-tight">
+                  Why Partner With <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">ChadGlobal Market?</span>
+                </h2>
+                <p className="text-slate-300 text-lg mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                  We don't just trade; we build bridges. Our local expertise combined with global standards ensures your business succeeds without hassles.
                 </p>
-                <ul className="space-y-4">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
                   {[
-                    "Direct sourcing from Chad",
-                    "Export-ready documentation",
-                    "Reliable communication",
-                    "Long-term partnership approach"
+                    "Direct Source Access",
+                    "Transparent Pricing",
+                    "Quality Assurance",
+                    "End-to-End Logistics"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-                        <CheckCircle className="h-4 w-4" />
+                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                      <div className="h-8 w-8 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400">
+                        <CheckCircle className="h-5 w-5" />
                       </div>
-                      <span className="font-medium">{item}</span>
-                    </li>
+                      <span className="font-medium text-white">{item}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-              <div className="flex-1 w-full flex justify-center lg:justify-end">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 max-w-md w-full text-center">
-                  <h3 className="text-2xl font-bold mb-4">Ready to cooperate?</h3>
-                  <p className="mb-8 opacity-90">Contact us today for quotations and cooperation.</p>
+
+              <div className="flex justify-center lg:justify-end">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-[2.5rem] max-w-md w-full text-center shadow-2xl">
+                  <h3 className="text-2xl font-bold text-white mb-2">Ready to Start?</h3>
+                  <p className="text-slate-300 mb-8">Get a competitive quote for your specific needs today.</p>
                   <Link to="/contact">
-                    <Button size="lg" className="w-full bg-white text-primary hover:bg-white/90 font-bold h-12 rounded-xl">
-                      Contact Us
+                    <Button size="lg" className="w-full h-14 bg-white text-slate-900 hover:bg-slate-100 font-bold text-lg rounded-2xl shadow-lg transition-transform hover:-translate-y-0.5">
+                      Contact Us Now
                     </Button>
                   </Link>
+                  <p className="mt-4 text-xs text-slate-400">Response within 24 hours</p>
                 </div>
               </div>
             </div>
