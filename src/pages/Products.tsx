@@ -4,14 +4,13 @@ import categoriesData from '@/data/categories.json';
 import productsData from '@/data/products.json';
 import categoryContent from '@/data/categoryContent.json';
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardFooter } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Badge } from '@/components/ui/Badge';
 import { Input } from '@/components/ui/Input';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { 
   Package, 
-  MessageCircle, 
   Search
 } from 'lucide-react';
 
@@ -73,13 +72,23 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Page Header */}
-      <div className="bg-white border-b border-slate-200">
-        <div className="container-custom py-12 lg:py-16">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900">Our Products</h1>
-            <p className="text-lg text-slate-600">
-              Explore our curated selection of premium Chadian exports and essential global imports.
+      {/* Hero Section */}
+      <div className="relative bg-slate-900 py-20 lg:py-28 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] opacity-[0.03] mix-blend-overlay bg-cover bg-center pointer-events-none" />
+
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
+            <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20 border-white/10 px-4 py-1.5 backdrop-blur-md transition-colors">
+              Global Trade Catalog
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white tracking-tight leading-[1.1]">
+              World-Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Products</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+              Discover our premium selection of Chadian exports and essential imports. Quality assured, logistics handled.
             </p>
           </div>
         </div>
@@ -264,54 +273,52 @@ export default function Products() {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
-                <Card key={product.id} className="overflow-hidden group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white flex flex-col items-center text-center">
-                  {/* Image Container - Full Bleed */}
-                  <Link to={`/products/${product.id}`} className="w-full relative aspect-[4/3] bg-muted/20 overflow-hidden cursor-pointer">
-                    {product.image ? (
-                      <OptimizedImage
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center w-full h-full text-muted-foreground">
-                          <Package className="h-16 w-16 opacity-20" />
+                <Card key={product.id} className="group overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                  {/* Image Container */}
+                  <div className="p-3 pb-0">
+                    <Link to={`/products/${product.id}`} className="block relative aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-slate-100">
+                      {product.image ? (
+                        <OptimizedImage
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center w-full h-full text-slate-300">
+                          <Package className="h-16 w-16 opacity-30" />
+                        </div>
+                      )}
+
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-white/95 text-slate-900 shadow-sm backdrop-blur-md px-3 py-1.5 text-xs font-bold border-0">
+                          {getCategoryName(product.category)}
+                        </Badge>
                       </div>
-                    )}
+                    </Link>
+                  </div>
 
-                    {/* Badge */}
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-white/90 text-foreground hover:bg-white shadow-sm backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wide">
-                        {getCategoryName(product.category)}
-                      </Badge>
-                    </div>
-                  </Link>
-
-                  <CardContent className="p-6 flex-1 flex flex-col items-center">
-                    <Link to={`/products/${product.id}`} className="hover:text-primary transition-colors">
-                      <h3 className="font-bold font-heading text-xl leading-tight mb-3 transition-colors">
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <Link to={`/products/${product.id}`} className="group-hover:text-blue-600 transition-colors">
+                      <h3 className="font-bold font-heading text-xl leading-tight mb-3">
                         {product.name}
                       </h3>
                     </Link>
-                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4 leading-relaxed max-w-xs mx-auto">
+                    <p className="text-slate-500 text-sm line-clamp-3 mb-6 leading-relaxed">
                       {product.description}
                     </p>
-                    <div className="mt-auto pt-2">
-                      <Link to={`/products/${product.id}`} className="inline-block px-3 py-1 bg-primary/5 text-primary text-sm font-semibold rounded-full hover:bg-primary/10 transition-colors">
+
+                    <div className="mt-auto flex items-center justify-between gap-4">
+                      <Link to={`/products/${product.id}`} className="text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors">
                         View Details
+                      </Link>
+                      <Link to={`/contact?product=${encodeURIComponent(product.name)}`}>
+                        <Button size="sm" className="rounded-full h-10 px-5 bg-slate-900 text-white hover:bg-blue-600 shadow-md transition-all hover:-translate-y-0.5">
+                          Get Quote
+                        </Button>
                       </Link>
                     </div>
                   </CardContent>
-
-                  <CardFooter className="p-6 pt-0 w-full">
-                    <Link to={`/contact?product=${encodeURIComponent(product.name)}`} className="w-full">
-                      <Button className="w-full rounded-full h-11 gap-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md transition-all hover:translate-y-[-2px]">
-                        <MessageCircle className="h-4 w-4" />
-                        Get Quote
-                      </Button>
-                    </Link>
-                  </CardFooter>
                 </Card>
               ))}
             </div>
@@ -338,7 +345,7 @@ export default function Products() {
           )}
         </div>
       </div>
-    </div>
+      </div>
     </div>
   );
 }
