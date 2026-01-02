@@ -35,7 +35,7 @@ export default function About() {
               <OptimizedImage
                 src="/container_transport_2.jpeg"
                 alt="Warehouse and logistics"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

@@ -255,6 +255,22 @@
       "src": "/optimized/gome_arabic_3-3a962f8de8-w960.jpg"
     }
   },
+  "/groundnuts.jpg": {
+    "original": {
+      "src": "/groundnuts.jpg",
+      "width": 2000,
+      "height": 1334
+    },
+    "webp": {
+      "srcSet": "/optimized/groundnuts-09314e4f08-w320.webp 320w, /optimized/groundnuts-09314e4f08-w640.webp 640w, /optimized/groundnuts-09314e4f08-w960.webp 960w, /optimized/groundnuts-09314e4f08-w1280.webp 1280w"
+    },
+    "jpeg": {
+      "srcSet": "/optimized/groundnuts-09314e4f08-w320.jpg 320w, /optimized/groundnuts-09314e4f08-w640.jpg 640w, /optimized/groundnuts-09314e4f08-w960.jpg 960w, /optimized/groundnuts-09314e4f08-w1280.jpg 1280w"
+    },
+    "fallback": {
+      "src": "/optimized/groundnuts-09314e4f08-w1280.jpg"
+    }
+  },
   "/hero-image.jpg": {
     "original": {
       "src": "/hero-image.jpg",
@@ -381,6 +397,22 @@
     },
     "fallback": {
       "src": "/optimized/mobile-and-accessories-18b59a4758-w960.jpg"
+    }
+  },
+  "/mobile-phones-accessories.jpg": {
+    "original": {
+      "src": "/mobile-phones-accessories.jpg",
+      "width": 2000,
+      "height": 1125
+    },
+    "webp": {
+      "srcSet": "/optimized/mobile-phones-accessories-6184631ee0-w320.webp 320w, /optimized/mobile-phones-accessories-6184631ee0-w640.webp 640w, /optimized/mobile-phones-accessories-6184631ee0-w960.webp 960w, /optimized/mobile-phones-accessories-6184631ee0-w1280.webp 1280w"
+    },
+    "jpeg": {
+      "srcSet": "/optimized/mobile-phones-accessories-6184631ee0-w320.jpg 320w, /optimized/mobile-phones-accessories-6184631ee0-w640.jpg 640w, /optimized/mobile-phones-accessories-6184631ee0-w960.jpg 960w, /optimized/mobile-phones-accessories-6184631ee0-w1280.jpg 1280w"
+    },
+    "fallback": {
+      "src": "/optimized/mobile-phones-accessories-6184631ee0-w1280.jpg"
     }
   },
   "/rules.jpeg": {
@@ -557,6 +589,22 @@
     },
     "fallback": {
       "src": "/optimized/tv_appliance-1538d6e352-w960.jpg"
+    }
+  },
+  "/tvs-home-appliances.jpg": {
+    "original": {
+      "src": "/tvs-home-appliances.jpg",
+      "width": 2000,
+      "height": 1250
+    },
+    "webp": {
+      "srcSet": "/optimized/tvs-home-appliances-1c4c6d5837-w320.webp 320w, /optimized/tvs-home-appliances-1c4c6d5837-w640.webp 640w, /optimized/tvs-home-appliances-1c4c6d5837-w960.webp 960w, /optimized/tvs-home-appliances-1c4c6d5837-w1280.webp 1280w"
+    },
+    "jpeg": {
+      "srcSet": "/optimized/tvs-home-appliances-1c4c6d5837-w320.jpg 320w, /optimized/tvs-home-appliances-1c4c6d5837-w640.jpg 640w, /optimized/tvs-home-appliances-1c4c6d5837-w960.jpg 960w, /optimized/tvs-home-appliances-1c4c6d5837-w1280.jpg 1280w"
+    },
+    "fallback": {
+      "src": "/optimized/tvs-home-appliances-1c4c6d5837-w1280.jpg"
     }
   },
   "/white_sesame_seed.jpeg": {

@@ -12,6 +12,7 @@
     "assets:optimize": "node scripts/optimize-images.mjs",
     "assets:ocr": "node scripts/extract-ocr.mjs",
     "assets:build": "npm run assets:optimize && npm run assets:ocr",
+    "assets:download": "node scripts/download-images.mjs",
     "deploy": "vercel"
   },
   "dependencies": {

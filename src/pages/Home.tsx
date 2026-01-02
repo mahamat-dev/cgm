@@ -7,21 +7,44 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#f0fdf4] py-16 lg:py-28 overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-emerald-50 to-white py-16 lg:py-28">
+        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
         <div className="container-custom relative">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="mb-4 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-sm border border-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                Export • Import • Supply
+              </div>
+
+              <h1 className="mt-6 mb-4 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
                 ChadGlobal Market
               </h1>
               <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl">
                 Reliable Trade & Supply Partner from Chad
               </h2>
-              <p className="mb-8 text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                ChadGlobal Market is an international trade and supply company based in Chad, specializing in the sourcing and export of agricultural commodities and the import of essential goods.
-                <br /><br />
-                We work directly with local producers and trusted suppliers to deliver export-ready products, supported by proper documentation, transparent processes, and consistent quality.
+
+              <p className="mb-6 text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                We source and export premium agricultural commodities from Chad and supply essential goods through trusted import channels—backed by export-ready documentation and reliable communication.
               </p>
+
+              <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0 text-left">
+                {[
+                  "Direct sourcing from producers",
+                  "Bulk / wholesale supply",
+                  "Export documentation support",
+                  "Consistent quality checks"
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl bg-white/70 backdrop-blur-sm border border-white p-4 shadow-sm">
+                    <div className="mt-0.5 h-7 w-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                      <CheckCircle className="h-4 w-4" />
+                    </div>
+                    <div className="font-semibold text-slate-900">{item}</div>
+                  </div>
+                ))}
+              </div>
+
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link to="/products">
                   <Button size="lg" className="gap-2 h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
@@ -30,25 +53,48 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg rounded-full border-2 hover:bg-white">
+                  <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg rounded-full border-2 bg-white/60 hover:bg-white">
                     Contact Us Today
                     <ArrowRight className="h-5 w-5" />
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="flex-1 w-full max-w-xl lg:max-w-none">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50">
+
+            <div className="lg:col-span-6">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/60 bg-white/30">
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/0 to-black/0 pointer-events-none" />
                 <OptimizedImage
-                  src="/hero-image.jpg"
-                  alt="ChadGlobal Market Trade"
-                  className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-700"
+                  src="/container_transport.jpeg"
+                  alt="Container transport and logistics"
+                  className="w-full h-auto object-cover aspect-[16/11] hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="eager"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
-                  <div className="text-white font-bold text-lg">Premium Quality</div>
-                  <div className="text-white/80 text-sm">Direct from the source</div>
+
+                <div className="absolute top-5 left-5 right-5 flex items-center justify-between gap-3">
+                  <div className="rounded-full bg-white/85 backdrop-blur-sm px-4 py-2 text-sm font-bold text-slate-900 shadow-sm">
+                    International Logistics
+                  </div>
+                  <div className="hidden sm:flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                    <Truck className="h-4 w-4 text-primary" />
+                    Fast coordination
+                  </div>
+                </div>
+
+                <div className="absolute bottom-5 left-5 right-5">
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { label: "Direct sourcing", value: "Chad" },
+                      { label: "Order model", value: "RFQ" },
+                      { label: "Supply", value: "Wholesale" }
+                    ].map((stat) => (
+                      <div key={stat.label} className="rounded-2xl bg-white/85 backdrop-blur-sm p-4 shadow-sm border border-white/60">
+                        <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{stat.label}</div>
+                        <div className="text-lg font-bold text-slate-900 mt-1">{stat.value}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

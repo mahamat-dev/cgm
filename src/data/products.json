@@ -93,6 +93,7 @@
     "category": "agriculture",
     "name": "Groundnuts (Peanuts)",
     "description": "High-quality groundnuts from Chad, rich in oil and protein. Ideal for snacking, oil extraction, and food processing.",
+    "image": "/groundnuts.jpg",
     "details": {
       "Uses": [
         "Oil extraction",
@@ -257,6 +258,7 @@
     "category": "mobile-accessories",
     "name": "Mobile Phones & Accessories",
     "description": "ChadGlobal Market supplies a wide range of mobile phones and accessories suitable for the African market. We offer bulk and wholesale solutions for distributors, retailers, NGOs, and corporate buyers.",
+    "image": "/mobile-phones-accessories.jpg",
     "details": {
       "Products": [
         "Smartphones (budget & mid-range)",
@@ -273,6 +275,7 @@
     "category": "electronics",
     "name": "TVs & Home Appliances",
     "description": "ChadGlobal Market supplies home entertainment and household electronic appliances suitable for residential and commercial use. Our products are energy-efficient and adapted to local voltage and climate conditions.",
+    "image": "/tvs-home-appliances.jpg",
     "details": {
       "Products": [
         "LED TVs",

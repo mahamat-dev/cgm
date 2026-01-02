@@ -14,6 +14,8 @@ Text that exists inside images (screenshots, posters, WhatsApp notes, etc.) is e
   - Report: `.trae/documents/ocr-report.md`
 
 ## Commands
+- Download curated stock images used for missing product photos:
+  - `npm run assets:download`
 - Optimize images and regenerate `src/data/imageManifest.json`:
   - `npm run assets:optimize`
 - Run OCR and regenerate OCR outputs:
@@ -41,4 +43,3 @@ Text that exists inside images (screenshots, posters, WhatsApp notes, etc.) is e
 
 ## Caching
 Optimized assets under `/optimized/*` are served with long-term immutable caching via [vercel.json](file:///Users/mahamat/Desktop/cgm/vercel.json).
-
