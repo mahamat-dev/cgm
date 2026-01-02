@@ -1,59 +1,112 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Clock } from 'lucide-react';
 import { Logo } from './ui/Logo';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-slate-950 text-white pt-20 pb-12 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-900/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Company Info */}
-          <div>
-            <div className="mb-6">
-              <Logo variant="default" theme="dark" />
-            </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+          <div className="space-y-6">
+            <Logo variant="default" theme="dark" />
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Your reliable source for quality general goods. We connect markets and deliver quality products with honesty, efficiency, and professionalism.
             </p>
+            <div className="flex gap-4">
+              {/* Social Placeholders */}
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer">
+                  <div className="h-4 w-4 bg-slate-400 rounded-sm" />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold font-heading mb-4 text-secondary">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-slate-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-slate-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/products" className="text-slate-300 hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="/contact" className="text-slate-300 hover:text-white transition-colors">Contact Us</Link></li>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'Home', href: '/' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Products', href: '/products' },
+                { name: 'Contact', href: '/contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-slate-400 hover:text-white hover:pl-2 transition-all text-sm inline-block">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Our Products</h3>
+            <ul className="space-y-3">
+              {[
+                'Sesame Seeds',
+                'Gum Arabic',
+                'Groundnuts',
+                'Solar Systems',
+                'Mobile Accessories'
+              ].map((item) => (
+                <li key={item}>
+                  <Link to="/products" className="text-slate-400 hover:text-white hover:pl-2 transition-all text-sm inline-block">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold font-heading mb-4 text-secondary">Contact Us</h3>
+            <h3 className="text-lg font-bold font-heading mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-slate-300">
-                <Mail className="h-5 w-5 mt-0.5 text-secondary shrink-0" />
-                <span>info@chadglobalmarket.com</span>
+              <li className="flex items-start gap-3 text-slate-400 group">
+                <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Mail className="h-4 w-4" />
+                </div>
+                <div className="text-sm">
+                  <span className="block text-slate-500 text-xs mb-0.5">Email us</span>
+                  info@chadglobalmarket.com
+                </div>
               </li>
-              <li className="flex items-start space-x-3 text-slate-300">
-                <Phone className="h-5 w-5 mt-0.5 text-secondary shrink-0" />
-                <span>+235 69 03 04 05</span>
+              <li className="flex items-start gap-3 text-slate-400 group">
+                <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Phone className="h-4 w-4" />
+                </div>
+                <div className="text-sm">
+                  <span className="block text-slate-500 text-xs mb-0.5">Call us</span>
+                  +235 69 03 04 05
+                </div>
               </li>
-              <li className="flex items-start space-x-3 text-slate-300">
-                <MessageCircle className="h-5 w-5 mt-0.5 text-secondary shrink-0" />
-                <span>WhatsApp Available</span>
-              </li>
-              <li className="flex items-start space-x-3 text-slate-300">
-                <Clock className="h-5 w-5 mt-0.5 text-secondary shrink-0" />
-                <span>Mon – Sat | 8:00 AM – 6:00 PM</span>
+              <li className="flex items-start gap-3 text-slate-400 group">
+                <div className="h-8 w-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Clock className="h-4 w-4" />
+                </div>
+                <div className="text-sm">
+                  <span className="block text-slate-500 text-xs mb-0.5">Working Hours</span>
+                  Mon – Sat | 8:00 AM – 6:00 PM
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-400">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} Chad Global Market. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

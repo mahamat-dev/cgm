@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/Button';
-import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Clock, MessageCircle, Send, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/Input';
@@ -37,144 +37,130 @@ export default function Contact() {
   const whatsappLink = `https://wa.me/23569030405?text=${whatsappMessage}`;
 
   return (
-    <div className="flex flex-col">
-      <section className="bg-primary/5 py-16 text-center">
-        <div className="container-custom">
-          <h1 className="text-4xl font-bold font-heading mb-4 text-primary">Contact Us</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We are ready to assist you with orders, pricing, and inquiries.
+    <div className="flex flex-col min-h-screen bg-slate-50">
+      {/* Hero */}
+      <section className="bg-white border-b border-slate-200 py-16 lg:py-20 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-50 translate-y-1/2" />
+        
+        <div className="container-custom relative z-10">
+          <h1 className="text-4xl lg:text-5xl font-bold font-heading mb-4 text-slate-900">Get in Touch</h1>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            We are ready to assist you with orders, pricing, and inquiries. Reach out to our team today.
           </p>
         </div>
       </section>
 
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="container-custom py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Contact Information */}
-          <div className="space-y-10">
+          <div className="space-y-12">
             <div>
-              <h2 className="text-3xl font-bold font-heading mb-8 text-foreground">Get in Touch</h2>
+              <h2 className="text-3xl font-bold font-heading mb-8 text-slate-900">Contact Details</h2>
 
               <div className="space-y-8">
-                <div className="flex items-start space-x-6">
-                  <div className="bg-primary/10 p-4 rounded-2xl text-primary">
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-blue-50 p-4 rounded-2xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold font-heading mb-1">Email Us</h3>
-                    <p className="text-muted-foreground mb-1">Send us an email anytime.</p>
-                    <a href="mailto:info@chadglobalmarket.com" className="text-primary font-medium hover:underline text-lg">
+                    <h3 className="text-lg font-bold font-heading mb-1 text-slate-900">Email Us</h3>
+                    <p className="text-slate-500 mb-2 text-sm">For general inquiries and quotes</p>
+                    <a href="mailto:info@chadglobalmarket.com" className="text-blue-600 font-semibold hover:text-blue-700 transition-colors text-lg">
                       info@chadglobalmarket.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="bg-primary/10 p-4 rounded-2xl text-primary">
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-emerald-50 p-4 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold font-heading mb-1">Call Us</h3>
-                    <p className="text-muted-foreground mb-1">Mon-Sat from 8am to 6pm.</p>
-                    <a href="tel:+23569030405" className="text-primary font-medium hover:underline text-lg">
+                    <h3 className="text-lg font-bold font-heading mb-1 text-slate-900">Call Us</h3>
+                    <p className="text-slate-500 mb-2 text-sm">Mon-Sat from 8am to 6pm</p>
+                    <a href="tel:+23569030405" className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-lg">
                       +235 69 03 04 05
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="bg-primary/10 p-4 rounded-2xl text-primary">
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-green-50 p-4 rounded-2xl text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
                     <MessageCircle className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold font-heading mb-1">WhatsApp</h3>
-                    <p className="text-muted-foreground mb-1">Chat with us directly.</p>
-                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline text-lg">
-                      Chat on WhatsApp
+                    <h3 className="text-lg font-bold font-heading mb-1 text-slate-900">WhatsApp</h3>
+                    <p className="text-slate-500 mb-2 text-sm">Chat with us directly for quick responses</p>
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-green-600 font-semibold hover:text-green-700 transition-colors text-lg inline-flex items-center gap-2">
+                      Start Chat <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6">
-                  <div className="bg-primary/10 p-4 rounded-2xl text-primary">
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-amber-50 p-4 rounded-2xl text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
                     <Clock className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold font-heading mb-1">Business Hours</h3>
-                    <p className="text-muted-foreground">Monday – Saturday</p>
-                    <p className="text-muted-foreground">8:00 AM – 6:00 PM</p>
+                    <h3 className="text-lg font-bold font-heading mb-1 text-slate-900">Office Hours</h3>
+                    <p className="text-slate-500 text-sm">
+                      Monday – Saturday<br/>
+                      8:00 AM – 6:00 PM
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="p-8 bg-secondary/5 rounded-3xl border border-secondary/10">
-              <h3 className="text-xl font-bold font-heading mb-2 text-secondary">Ready to start?</h3>
-              <p className="text-muted-foreground mb-6">
-                Contact us via WhatsApp for the fastest response regarding pricing and availability.
-              </p>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" className="w-full gap-2 justify-center h-12 text-base">
-                  <MessageCircle className="h-5 w-5" />
-                  WhatsApp Us Now
-                </Button>
-              </a>
-            </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 h-fit">
-            <h2 className="text-2xl font-bold font-heading mb-8 text-foreground">Send a Message</h2>
+          <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
+            <h3 className="text-2xl font-bold font-heading mb-6 text-slate-900">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Your Name
-                </label>
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-semibold text-slate-700 ml-1">Full Name</label>
                 <Input
-                  type="text"
                   id="name"
                   name="name"
+                  placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-slate-50 border-slate-200 h-12"
-                  placeholder="John Doe"
+                  className="h-12 rounded-xl bg-slate-50 border-slate-200 focus:bg-white transition-all"
                 />
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
+              
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
                 <Input
-                  type="email"
                   id="email"
                   name="email"
+                  type="email"
+                  placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-slate-50 border-slate-200 h-12"
-                  placeholder="john@example.com"
+                  className="h-12 rounded-xl bg-slate-50 border-slate-200 focus:bg-white transition-all"
                 />
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-semibold text-slate-700 ml-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
+                  placeholder="Tell us about your requirements..."
+                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow resize-none text-sm"
-                  placeholder="How can we help you?"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 focus:bg-white transition-all resize-none"
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full h-12 text-base">
-                Send Message
+              <Button type="submit" size="lg" className="w-full h-14 rounded-xl text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all hover:-translate-y-0.5 gap-2">
+                Send Message <Send className="h-5 w-5" />
               </Button>
             </form>
           </div>

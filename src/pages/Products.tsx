@@ -12,7 +12,6 @@ import { OptimizedImage } from '@/components/OptimizedImage';
 import { 
   Package, 
   MessageCircle, 
-  ChevronDown,
   Search
 } from 'lucide-react';
 
@@ -73,71 +72,81 @@ export default function Products() {
       : undefined;
 
   return (
-    <div className="container-custom py-8">
-      {/* Breadcrumb & Header */}
-      <div className="mb-8">
-        <div className="flex items-center text-sm text-muted-foreground mb-4">
-          <span>Home</span>
-          <span className="mx-2">/</span>
-          <span className="font-medium text-foreground">Products</span>
+    <div className="min-h-screen bg-slate-50">
+      {/* Page Header */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="container-custom py-12 lg:py-16">
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto space-y-4">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading text-slate-900">Our Products</h1>
+            <p className="text-lg text-slate-600">
+              Explore our curated selection of premium Chadian exports and essential global imports.
+            </p>
+          </div>
         </div>
-        <h1 className="text-3xl font-bold font-heading text-foreground">Our Products</h1>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Sidebar Filters */}
-        <aside className="lg:w-1/4 space-y-8">
-
-          {/* Categories */}
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-bold text-lg">Categories</h3>
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <div className="space-y-3">
-              {categoriesData.map((category) => (
-                <div key={category.id} className="flex items-center space-x-3">
-                  <Checkbox
-                    id={category.id} 
-                    checked={selectedCategories.includes(category.id)}
-                    onChange={() => toggleCategory(category.id)}
-                  />
-                  <label
-                    htmlFor={category.id} 
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+      <div className="container-custom py-12">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar Filters - Modernized */}
+          <aside className="lg:w-64 shrink-0 space-y-8">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 sticky top-24">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-bold text-slate-900">Filters</h3>
+                {selectedCategories.length > 0 && (
+                  <button
+                    onClick={() => setSelectedCategories([])}
+                    className="text-xs font-medium text-primary hover:text-primary/80 transition-colors"
                   >
-                    {category.name}
-                  </label>
+                    Reset
+                  </button>
+                )}
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Categories</h4>
+                  <div className="space-y-3">
+                    {categoriesData.map((category) => (
+                      <label
+                        key={category.id}
+                        className="flex items-center gap-3 cursor-pointer group"
+                      >
+                        <div className="relative flex items-center">
+                          <Checkbox
+                            id={category.id}
+                            checked={selectedCategories.includes(category.id)}
+                            onChange={() => toggleCategory(category.id)}
+                            className="border-slate-300 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                          />
+                        </div>
+                        <span className={`text-sm transition-colors ${selectedCategories.includes(category.id) ? 'text-slate-900 font-medium' : 'text-slate-600 group-hover:text-slate-900'}`}>
+                          {category.name}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          </aside>
 
-        </aside>
-
-        {/* Main Content */}
-        <div className="flex-1">
-          {/* Toolbar */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-            <p className="text-sm text-muted-foreground">
-              Showing <span className="font-medium text-foreground">{filteredProducts.length}</span> items
-            </p>
-
-            <div className="flex items-center gap-3 w-full sm:w-auto">
-              <div className="relative flex-1 sm:w-64">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          {/* Main Content */}
+          <div className="flex-1">
+            {/* Toolbar */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+              <div className="relative w-full sm:max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <Input
-                  placeholder="Search in products..."
-                  className="pl-9 h-9"
+                  placeholder="Search products..."
+                  className="pl-10 bg-slate-50 border-transparent focus:bg-white focus:border-primary/20 transition-all"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <Button variant="outline" size="sm" className="hidden sm:flex gap-2">
-                Sort by <ChevronDown className="h-3 w-3" />
-              </Button>
+              <p className="text-sm text-slate-500 whitespace-nowrap">
+                Showing <span className="font-bold text-slate-900">{filteredProducts.length}</span> results
+              </p>
             </div>
-          </div>
 
           {selectedCategoryOverview && (
             <section className="mb-6 rounded-3xl border border-slate-100 bg-white shadow-sm p-6 md:p-8">
@@ -329,6 +338,7 @@ export default function Products() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
