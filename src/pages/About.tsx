@@ -13,11 +13,14 @@ export default function About() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
         <div className="container-custom relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white text-sm font-semibold shadow-sm backdrop-blur-md mb-6">
+            ChadGlobal Market
+          </div>
           <h1 className="text-4xl lg:text-6xl font-bold font-heading mb-6 text-white tracking-tight">
             Connecting Markets, <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Delivering Trust</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            A general goods trading company dedicated to supplying reliable and affordable products locally and internationally.
+            Reliable Trade & Supply Partner from Chad. We source and export agricultural commodities and import essential goods with transparent processes and consistent quality.
           </p>
         </div>
       </section>
@@ -32,14 +35,17 @@ export default function About() {
                 Who We Are
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold font-heading text-slate-900 leading-tight">
-                A Premier General Goods Trading Company
+                Reliable Trade & Supply Partner from Chad
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Chad Global Market is committed to excellence. We specialize in sourcing and distributing a variety of everyday products, ensuring quality, consistency, and timely delivery.
+                  ChadGlobal Market is an international trade and supply company based in Chad, specializing in the sourcing and export of agricultural commodities and the import of essential goods.
                 </p>
                 <p>
-                  Our goal is to build long-term relationships with our customers by offering trusted products and responsive customer service. Whether you are an individual shopper, a retailer, or a business looking for bulk supplies, we are here to serve you.
+                  We work directly with local producers and trusted suppliers to deliver export-ready products, supported by proper documentation, transparent processes, and consistent quality.
+                </p>
+                <p>
+                  Our goal is to build long-term relationships with buyers and partners by offering trusted products and responsive service, from first inquiry to delivery.
                 </p>
               </div>
               <div className="pt-4">
