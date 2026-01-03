@@ -44,9 +44,6 @@ export default function About() {
                 <p>
                   We work directly with local producers and trusted suppliers to deliver export-ready products, supported by proper documentation, transparent processes, and consistent quality.
                 </p>
-                <p>
-                  Our goal is to build long-term relationships with buyers and partners by offering trusted products and responsive service, from first inquiry to delivery.
-                </p>
               </div>
               <div className="pt-4">
                 <Link to="/contact">
