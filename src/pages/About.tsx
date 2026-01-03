@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { Target, Globe2, ArrowRight } from 'lucide-react';
+import { Search, Truck, FileCheck, Handshake, Leaf, ShoppingBag, Target, Globe2, ArrowRight } from 'lucide-react';
 
 export default function About() {
   return (
@@ -76,6 +76,69 @@ export default function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-slate-50">
+        <div className="container-custom">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900">Our Services</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              From sourcing to shipping, we coordinate the full trade cycle with clear documentation and reliable delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                icon: Search,
+                title: 'B2B Trade & Sourcing',
+                desc: 'Supplying international buyers with quality products sourced from trusted local producers in Chad. We manage the entire sourcing process to ensure consistency, compliance, and reliability.',
+                color: 'bg-blue-50 text-blue-600 border-blue-100'
+              },
+              {
+                icon: Leaf,
+                title: 'Export of Agricultural Commodities',
+                desc: 'We source and export selected agricultural products from Chad, prepared to meet international quality standards and market requirements.',
+                color: 'bg-emerald-50 text-emerald-600 border-emerald-100'
+              },
+              {
+                icon: ShoppingBag,
+                title: 'Import & Supply of Essential Goods',
+                desc: 'Importing and distributing essential goods to meet local and regional market demand through reliable supply chains.',
+                color: 'bg-amber-50 text-amber-600 border-amber-100'
+              },
+              {
+                icon: Handshake,
+                title: 'B2B Matchmaking & Partnership Facilitation',
+                desc: 'Connecting international buyers with verified local producers and suppliers in Chad while overseeing sourcing, negotiation, and transaction coordination.',
+                color: 'bg-indigo-50 text-indigo-600 border-indigo-100'
+              },
+              {
+                icon: FileCheck,
+                title: 'Trade Documentation & Compliance',
+                desc: 'Handling export and import documentation, including invoices, packing lists, certificates of origin, and other required compliance documents.',
+                color: 'bg-purple-50 text-purple-600 border-purple-100'
+              },
+              {
+                icon: Truck,
+                title: 'Logistics Coordination',
+                desc: 'Coordinating transportation, freight forwarding, and delivery to ensure efficient and timely shipment of goods.',
+                color: 'bg-slate-50 text-slate-700 border-slate-200'
+              }
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="group relative p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 text-left"
+              >
+                <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${service.color} border mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-bold font-heading mb-3 text-slate-900">{service.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

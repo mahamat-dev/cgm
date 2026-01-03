@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { ArrowRight, ShoppingBag, Truck, FileText, Handshake, CheckCircle } from 'lucide-react';
+import { ArrowRight, Search, ShoppingBag, Truck, FileText, FileCheck, Handshake, Leaf, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -107,42 +107,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Services Section */}
       <section className="py-24 bg-white relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="container-custom">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900">Comprehensive Trade Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900">Our Services</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              We provide end-to-end services to ensure your trade operations are seamless, compliant, and efficient.
+              End-to-end trade and supply services designed for reliability, compliance, and on-time delivery.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
-                icon: Truck,
-                title: "Agro Export",
-                desc: "Direct sourcing and export of premium Chadian agricultural commodities.",
+                icon: Search,
+                title: "B2B Trade & Sourcing",
+                desc: "Supplying international buyers with quality products sourced from trusted local producers in Chad.",
+                color: "bg-blue-50 text-blue-600 border-blue-100"
+              },
+              {
+                icon: Leaf,
+                title: "Export of Agricultural Commodities",
+                desc: "Sourcing and exporting selected agricultural products prepared to meet international standards.",
                 color: "bg-emerald-50 text-emerald-600 border-emerald-100"
               },
               {
                 icon: ShoppingBag,
-                title: "Import & Supply",
-                desc: "Wholesale supply of essential electronics, solar systems, and general goods.",
-                color: "bg-blue-50 text-blue-600 border-blue-100"
-              },
-              {
-                icon: FileText,
-                title: "Documentation",
-                desc: "Full support with customs, export/import paperwork, and compliance.",
-                color: "bg-purple-50 text-purple-600 border-purple-100"
+                title: "Import & Supply of Essential Goods",
+                desc: "Importing and distributing essential goods through reliable supply chains for local demand.",
+                color: "bg-amber-50 text-amber-600 border-amber-100"
               },
               {
                 icon: Handshake,
                 title: "B2B Matchmaking",
-                desc: "Connecting international buyers with trusted local suppliers in Chad.",
-                color: "bg-amber-50 text-amber-600 border-amber-100"
+                desc: "Connecting international buyers with verified local producers while coordinating negotiation and transactions.",
+                color: "bg-indigo-50 text-indigo-600 border-indigo-100"
+              },
+              {
+                icon: FileCheck,
+                title: "Trade Documentation & Compliance",
+                desc: "Handling invoices, packing lists, certificates of origin, and required compliance documents.",
+                color: "bg-purple-50 text-purple-600 border-purple-100"
+              },
+              {
+                icon: Truck,
+                title: "Logistics Coordination",
+                desc: "Coordinating freight forwarding and delivery to ensure efficient and timely shipments.",
+                color: "bg-slate-50 text-slate-700 border-slate-200"
               }
             ].map((service, index) => (
               <div key={index} className="group relative p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
