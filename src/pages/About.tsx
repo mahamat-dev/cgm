@@ -150,17 +150,17 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-bold font-heading mb-4 text-slate-900">Our Mission</h3>
               <p className="text-slate-600 text-lg leading-relaxed">
-                To connect markets and deliver quality general goods with honesty, efficiency, and professionalism.
+                Deliver trusted products through transparent trade, reliable sourcing, and efficient logistics.
               </p>
             </div>
 
-            <div className="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group">
+            <div className="bg-white p-10 rounded-4xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group">
               <div className="h-14 w-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Globe2 className="h-7 w-7" />
               </div>
               <h3 className="text-2xl font-bold font-heading mb-4 text-slate-900">Our Vision</h3>
               <p className="text-slate-600 text-lg leading-relaxed">
-                To become a trusted global market partner for general goods supply.
+                Be a global reference for quality trade and supply from Chad.
               </p>
             </div>
           </div>
